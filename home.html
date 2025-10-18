@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Bliss Cake Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="C:\Users\megha\OneDrive\cakeshop\index.js">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f54291; /* Pink background */
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* Navbar links */
+    .navbar a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: white; /* White links */
+      font-weight: bold;
+    }
+
+    /* Logo color */
+    .logo {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Offset sections for fixed navbar */
+    #about, #cakes, #reviews {
+      scroll-margin-top: 80px; /* adjust based on navbar height */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header  -->
+  <header class="header">
+    <div class="logo">🎂 <i>Sweet Bliss</i></div>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#cakes">Cakes</a>
+      <a href="#review">Ratings</a>
+      <a href="#enquirySection">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <span class="cart-icon">🛒 <span id="cart-count">0</span></span>
+      <div id="hamburger">☰</div>
+    </div>
+  </header>
+<br>
+  <marquee style="margin-top:50px;">
+    <span style="color: #f54291">Use code <strong>SB2025</strong> to get 25% discount 🎉</span>
+  </marquee>
+  <div id="popupOverlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Delight in Every Slice</h1>
+      <p>Freshly baked cakes for every occasion</p>
+      <img src="https://www.shutterstock.com/image-vector/cake-shop-logo-set-tools-600nw-2252041183.jpg"
+           alt="Cake Shop Logo"
+           class="hero-img">
+    </div>
+  </section>
+
+  <!-- Cakes Section -->
+  <section id="cakes" class="shop-layout">
+    <div class="product-area">
+      <h2 class="section-title">Cakes</h2>
+
+      <!-- Product Section -->
+      <section class="product-container">
+        <div class="card">
+          <img src="https://www.fnp.com/images/pr/l/v20250519212917/chocolate-truffle-cream-cake_1.jpg" alt="Chocolate Cake">
+          <div class="info">
+            <h3>Chocolate Truffle</h3>
+            <p class="price">₹450</p>
+            <button class="add-cart" data-name="Chocolate Truffle" data-price="450">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://assets.winni.in/product/primary/2023/10/90482.jpeg?dpr=1&w=500" alt="Vanilla Cake">
+          <div class="info">
+            <h3>Vanilla Dream</h3>
+            <p class="price">₹400</p>
+            <button class="add-cart" data-name="Vanilla Dream" data-price="400">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://assets.winni.in/product/primary/2024/3/94573.jpeg?dpr=2&w=220" alt="Strawberry Cake">
+          <div class="info">
+            <h3>Strawberry Bliss</h3>
+            <p class="price">₹480</p>
+            <button class="add-cart" data-name="Strawberry Bliss" data-price="480">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-container">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmJL9Wn29R-vk2fe4Of3tIseT1aQD_JBri8A&s" alt="Floral Cake">
+          <div class="info">
+            <h3>Floral Cake</h3>
+            <p class="price">₹980</p>
+            <button class="add-cart" data-name="Floral Cake" data-price="980">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://www.onlinedelivery.in/images/detailed/31/chocolate_fruit_gateau_half_kg__1.jpg" alt="Chocolate Fruit Cake">
+          <div class="info">
+            <h3>Chocolate Fruit Cake</h3>
+            <p class="price">₹980</p>
+            <button class="add-cart" data-name="Chocolate Fruit Cake" data-price="980">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://i.pinimg.com/474x/e5/81/18/e58118c10924066cff9936688675c85d.jpg" alt="Butter Cream Cake">
+          <div class="info">
+            <h3>Butter Cream Cake</h3>
+            <p class="price">₹1080</p>
+            <button class="add-cart" data-name="Butter Cream Cake" data-price="1080">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  
+
+  <!-- Reviews Section -->
+  <section id="review" class="shop-layout">
+    <div class="product-area">
+      <h2 class="section-title">Customer Review</h2>
+      <section class="product-container" id="reviews">
+        <div class="card">
+          <div class="info">
+            <h3>Riya Thomas</h3>
+            <p>"The chocolate truffle was simply divine! Soft, rich, and beautifully decorated."</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="rating">4.9/5</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3>Arjun Nair</h3>
+            <p>"Loved the freshness of the fruit cake. Delivery was super quick too!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="rating">4.8/5</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3>Neha Sharma</h3>
+            <p>"The red velvet cake was so moist and creamy  everyone at my party loved it!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="rating">4.7/5</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info">
+            <h3>Rahul Menon</h3>
+            <p>"Great taste, amazing presentation. Definitely ordering again!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="rating">4.9/5</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+<!-- Footer -->
+<footer style="background-color:#f54291; text-align:center; padding:25px 20px; color:white; font-weight:bold; font-size:1.2rem; position:relative;">
+
+    <!-- Enquiry Button -->
+    <div id="enquirySection" style="margin-bottom:15px;">
+        <button id="enquiryBtn" 
+                style="padding:12px 25px; font-size:1rem; border:none; border-radius:8px; cursor:pointer; background:white; color:#f54291; font-weight:bold; transition:0.3s;">
+            Enquiry
+        </button>
+    </div>
+
+    <!-- Copyright -->
+    <div>© Sweet Bliss 2025</div>
+</footer>
+
+<!-- Enquiry Form Popup -->
+<div id="enquiryFormOverlay" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:10000; justify-content:center; align-items:center;">
+    
+    <div style="background:white; padding:30px; border-radius:15px; width:90%; max-width:400px; position:relative; box-shadow:0 0 20px rgba(0,0,0,0.3);">
+        <span id="closeForm" style="position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer;">&times;</span>
+        <h2 style="color:#f54291; text-align:center; margin-bottom:20px;">Enquiry Form</h2>
+        <form id="enquiryForm">
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"><br>
+            <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"><br>
+            <input type="email" name="email" placeholder="Email" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"><br>
+            <input type="text" name="location" placeholder="Delivery Location" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"><br>
+            
+            <!-- Cake Flavour -->
+            <select name="flavour" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;">
+                <option value="" disabled selected>Select Cake Flavour</option>
+                <option value="Chocolate Truffle">Chocolate Truffle</option>
+                <option value="Vanilla Dream">Vanilla Dream</option>
+                <option value="Strawberry Bliss">Strawberry Bliss</option>
+                <option value="Floral Cake">Floral Cake</option>
+                <option value="Chocolate Fruit Cake">Chocolate Fruit Cake</option>
+                <option value="Butter Cream Cake">Butter Cream Cake</option>
+            </select><br>
+
+            <!-- Quantity -->
+            <input type="number" name="quantity" placeholder="Quantity" min="1" required style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;"><br>
+
+            <button type="submit" style="width:100%; padding:12px; background:#f54291; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:0.3s;">
+                Submit
+            </button>
+        </form>
+        <p id="confirmationMsg" style="color:green; font-weight:bold; text-align:center; display:none; margin-top:15px;">Your order is confirmed!</p>
+    </div>
+</div>
+
+<script>
+    const enquiryBtn = document.getElementById('enquiryBtn');
+    const enquiryFormOverlay = document.getElementById('enquiryFormOverlay');
+    const closeForm = document.getElementById('closeForm');
+    const enquiryForm = document.getElementById('enquiryForm');
+    const confirmationMsg = document.getElementById('confirmationMsg');
+
+    // Show form
+    enquiryBtn.addEventListener('click', () => {
+        enquiryFormOverlay.style.display = 'flex';
+        enquiryFormOverlay.style.justifyContent = 'center';
+        enquiryFormOverlay.style.alignItems = 'center';
+    });
+
+    // Close form
+    closeForm.addEventListener('click', () => {
+        enquiryFormOverlay.style.display = 'none';
+        enquiryForm.reset();
+        confirmationMsg.style.display = 'none';
+    });
+
+    // Close form when clicking outside
+    window.addEventListener('click', (e) => {
+        if(e.target === enquiryFormOverlay){
+            enquiryFormOverlay.style.display = 'none';
+            enquiryForm.reset();
+            confirmationMsg.style.display = 'none';
+        }
+    });
+
+    // Handle form submission
+    enquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        confirmationMsg.style.display = 'block'; // Show confirmation message
+        enquiryForm.reset();
+
+        // Optional: hide confirmation message after 3s
+        setTimeout(() => {
+            confirmationMsg.style.display = 'none';
+            enquiryFormOverlay.style.display = 'none';
+        }, 3000);
+    });
+
+    // Navbar Contact button scroll to enquiry button
+    const navContactBtn = document.querySelector('.navbar a[href="#contact"]');
+    if(navContactBtn){
+        navContactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            enquiryBtn.scrollIntoView({behavior: 'smooth'});
+        });
+    }
+
+</script>
