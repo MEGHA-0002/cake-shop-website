@@ -29,4 +29,6 @@ It features a beautiful design with smooth navigation, product sections, custome
 - **CSS3** – For styling and layout  
 - **JavaScript (Vanilla JS)** – For interactivity (form handling and navbar)
 
+## Screenshot
+<img width="1920" height="977" alt="Screenshot 2025-10-24 111802" src="https://github.com/user-attachments/assets/9648ce3a-b7a3-4bea-901a-ebfb5c5f34ef" />
 
